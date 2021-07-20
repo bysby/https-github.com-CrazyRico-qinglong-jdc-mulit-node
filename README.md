@@ -15,7 +15,7 @@ $ docker-compose up &
 ```
 ![pic.png](pic.png)
 
-# 启动容器
+# 停止容器
 ```shell
 $ docker-compose down
 ```
