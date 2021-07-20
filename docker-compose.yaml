@@ -1,0 +1,56 @@
+version: '3'
+services:
+  crazyrico-ql-jdc-nginx:
+    container_name: crazyrico-ql-jdc-nginx
+    build:
+      context: ./
+      dockerfile: ./nginx/Dockerfile
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+    - "3001:3001"
+    volumes:
+    - ./log:/var/log/nginx
+    - ./public:/usr/share/nginx/html
+    depends_on:
+    - crazyrico-ql-jdc-node1
+    - crazyrico-ql-jdc-node2
+    restart: always
+
+  crazyrico-ql-jdc-node1:
+    container_name: crazyrico-ql-jdc-node1
+    build:
+      context: ./
+      dockerfile: ./ql-jdc/Dockerfile
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+    - "5770:5700"  
+    - "3002:5701"
+    volumes:
+    - ./node1/config:/ql/config
+    - ./node1/log:/ql/log
+    - ./node1/db:/ql/db
+    - ./node1/scripts:/ql/scripts
+    - ./node1/jbot:/ql/jbot
+    - ./node1/jdc:/ql/jdc
+    restart: always
+
+  crazyrico-ql-jdc-node2:
+    container_name: crazyrico-ql-jdc-node2
+    build:
+      context: ./
+      dockerfile: ./ql-jdc/Dockerfile
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+    - "5771:5700"  
+    - "3003:5701"
+    volumes:
+    - ./node2/config:/ql/config
+    - ./node2/log:/ql/log
+    - ./node2/db:/ql/db
+    - ./node2/scripts:/ql/scripts
+    - ./node2/jbot:/ql/jbot
+    - ./node2/jdc:/ql/jdc
+    restart: always
