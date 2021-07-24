@@ -25,8 +25,9 @@ services:
     environment:
       TZ: Asia/Shanghai
     ports:
-    - "5770:5700"  
-    - "3002:5701"
+    - "5700:5700"  
+    expose:
+    - "5701"
     volumes:
     - ./node1/config:/ql/config
     - ./node1/log:/ql/log
@@ -44,8 +45,9 @@ services:
     environment:
       TZ: Asia/Shanghai
     ports:
-    - "5771:5700"  
-    - "3003:5701"
+    - "5770:5700"
+    expose:
+    - "5701"
     volumes:
     - ./node2/config:/ql/config
     - ./node2/log:/ql/log
