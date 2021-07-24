@@ -1,3 +1,3 @@
 FROM yaonew/qinglong-jdc:alpha
 
-MAINTAINER alex.yao "crazyrico@qq.info"
+MAINTAINER alex.yao "crazyrico@qq.com"

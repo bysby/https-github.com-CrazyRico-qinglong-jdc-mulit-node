@@ -1,6 +1,6 @@
 FROM nginx:1.15.3-alpine
 
-MAINTAINER alex.yao "crazyrico@qq.info"
+MAINTAINER alex.yao "crazyrico@qq.com"
 
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
