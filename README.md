@@ -56,4 +56,4 @@ $ docker-compose up &
 $ docker-compose down
 ```
 
-![mulit-node.png](mulit-node.png)
+![mulit-node.png](mulit-node1.png)
