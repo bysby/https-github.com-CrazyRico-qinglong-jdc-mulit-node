@@ -30,7 +30,7 @@ crazyrico-ql-jdc-node3:
 let publicnodeinfo = [
 	{ "name":"京东节点1", "url":"node1" },
 	{ "name":"京东节点2", "url":"node2" },
-	{ "name":"京东节点2", "url":"node3" },
+	{ "name":"京东节点3", "url":"node3" }
 ]
 ```
 
